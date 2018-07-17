@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<script language="javascript">
+		function TrimString(sInString) {
+		  sInString = sInString.replace( /^\s+/g, "" );// strip leading
+		  return sInString.replace( /\s+$/g, "" );// strip trailing
+		}
+
+	function fazer(){
+		var entrada = document.getElementById("entrada").value;
+		var saida = document.getElementById("saida");
+		var temp = "";
+		var temp1 = "";
+		var lixo = "";
+		
+		var nome_instituicao = "";
+		var razao_social_instituicao = "";
+		var telefone_instituicao = "";
+		var fax_instituicao = "";
+		var endereco_instituicao = "";
+		var bairro_instituicao = "";
+		var cidade_instituicao = "";
+		var estado_instituicao = "";
+		var cep_instituicao  = "";
+		
+		var nome_pessoa = "";
+		var telefone_pessoa = "";
+		var ramal_pessoa = "";
+		var email_pessoa = "";
+		var departamento_pessoa = "";
+		var recebe_email_pessoa = "";
+
+		temp1 = entrada.split("\n");
+		for(i=0; i<temp1.length; i++){
+			temp = temp1[i].split(";");
+			if(temp[2].length > 0) nome_instituicao = temp[2];
+			else nome_instituicao = temp[1];
+			razao_social_instituicao = temp[1];
+			telefone_instituicao = temp[10];
+			fax_instituicao = temp[11];
+			endereco_instituicao = temp[3] + ", " + temp[4];
+			if(temp[9].length > 0) endereco_instituicao += " - " + temp[9];
+			bairro_instituicao = temp[0];
+			cidade_instituicao = temp[5];
+			estado_instituicao = temp[6];
+			if(temp[7].length > 0) cep_instituicao = temp[7].replace("-", "");
+			else cep_instituicao = "";
+			
+			nome_pessoa = temp[13];
+			telefone_pessoa = temp[10];
+			ramal_pessoa = "";
+			email_pessoa = temp[12];
+			departamento_pessoa = TrimString(temp[23]);
+			recebe_email_pessoa = "s";
+			
+			lixo += "INSERT INTO instituicoes (nome_instituicao, razao_social_instituicao, telefone_instituicao, fax_instituicao, endereco_instituicao, bairro_instituicao, cidade_instituicao, estado_instituicao, cep_instituicao) VALUES ";
+			lixo += "('" + nome_instituicao + "',";
+			lixo += "'" + razao_social_instituicao + "',";
+			lixo += "'" + telefone_instituicao + "',";
+			lixo += "'" + fax_instituicao + "',";
+			lixo += "'" + endereco_instituicao + "',";
+			lixo += "'" + bairro_instituicao + "',";
+			lixo += "'" + cidade_instituicao + "',";
+			lixo += "'" + estado_instituicao + "',";
+			lixo += "'" + cep_instituicao + "');\n";
+			
+			lixo += "SET @id_instituicao = LAST_INSERT_ID();\n";
+			
+			lixo += "INSERT INTO segmentos_instituicoes (id_segmento, id_instituicao) VALUES (22, @id_instituicao);\n";
+			
+			lixo += "INSERT INTO pessoas (id_instituicao, nome_pessoa, telefone_pessoa, ramal_pessoa, email_pessoa, departamento_pessoa, recebe_email_pessoa) VALUES ";
+			lixo += "(@id_instituicao, ";
+			lixo += "'" + nome_pessoa + "',";
+			lixo += "'" + telefone_pessoa + "',";
+			lixo += "'" + ramal_pessoa + "',";
+			lixo += "'" + email_pessoa + "',";
+			lixo += "'" + departamento_pessoa + "',";
+			lixo += "'" + recebe_email_pessoa + "');\n";
+			
+			lixo += "SET @id_pessoa = LAST_INSERT_ID();\n";
+			
+			lixo += "INSERT INTO segmentos_pessoas (id_segmento, id_pessoa) VALUES (22, @id_pessoa);\n";
+			
+			lixo += "\n";
+		}
+		saida.value = lixo;
+	}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<textarea style="width:100%; height:200px;" name="entrada" id="entrada"></textarea>
+<br>
+<textarea style="width:100%; height:200px;" name="saida" id="saida"></textarea>
+
+<input type="button" value="Converter" onClick="fazer();">
+</body>
+</html>
