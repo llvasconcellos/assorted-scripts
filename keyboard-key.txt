@@ -1,0 +1,75 @@
+001f200cf5f8 - 8A 79 F1 A9 7A 32 F5 A8 FA 16 EF F7 08 71 F1 6F
+
+
+
+Ask Question
+
+30
+
+
+38
+When dual booting Windows 7/10 and Linux Mint/Ubuntu, you may find yourself having to repair your Bluetooth devices again and again. This will happen every time you switch OS.
+
+Now, how do you prevent this?
+
+I'm answering my own question with the following guide, which has been tested on Ubuntu 14.4 and Linux mint 17.2, 17.3 and now Linux Mint 18.x.
+
+linux-mint windows dual-boot bluetooth
+shareimprove this question
+edited Jul 25 '17 at 18:55
+asked Jan 15 '16 at 11:21
+
+Mario Olivio Flores
+8881711
+2
+I've done this a number of times and the steps are extremely tedious. I created this script to help speed it up: github.com/LondonAppDev/dual-boot-bluetooth-pair – Mark Winterbottom Oct 1 '17 at 11:00
+add a comment
+2 Answers
+active oldest votes
+
+63
+
+Why does this happen?
+Basically, when you pair your device, your Bluetooth service generates a unique set of pairing keys. First, your computer stores the Bluetooth device's mac address and pairing key. Second, your Bluetooth device stores your computer's mac address and the matching key. This usually works fine, but the mac address for your Bluetooth port will be the same on both Linux and Windows (it is set on the hardware level). However, when you re-pair the device in Windows or Linux, it generates a new key. That key overwrites the previously stored key on the Bluetooth device. Windows overwrites the Linux key and vice versa.
+
+How to fix
+Using the instructions below, we'll first pair your Bluetooth devices with Ubuntu/Linux Mint, and then we'll pair Windows. Then we'll go back into our Linux system and copy the Windows generated pairing key(s) into our Linux system.
+
+Pair w/ mint/ubuntu - all devices
+Pair all devices w/ windows
+Copy your windows pairing keys in 1 of 2 ways.
+
+Use psexec -s -i regedit.exe from windows (harder)
+download from Download psexec from: http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx.
+unzip the zip you download and open a cmd terminal as root. (click start, search for cmd, then right click the CMD and click Run as Administrator)
+cd into the folder where you unzipped your download.
+run psexec -s -i regedit.exe
+Navigate to find the keys at LOCAL_MACHINE\CurrentControlSet\services\BTHPORT\Parameters\Keys If no CurrentControlSet try Controlset001.
+You should see a few keys labels with the MAC addresses for your connected device - write down or copy the MAC addresses and their associated value data. I found that I could not copy out the binary data and had to type those values out by hand, saving in a place I could access in my linux OS.
+use chntpw from your Linux distro (easier), start in a terminal then:
+
+sudo apt-get install chntpw
+mount your windows system drive
+cd /[windowsSystemDrive]/WINDOWS/System32/config - on windows 10 the root folder is "Windows", on Win7 it is "WINDOWS"
+chntpw -e SYSTEM opens up a console
+run these commands in that console
+
+> cd CurrentControlSet\Services\BTHPORT\Parameters\Keys
+> # if no CurrentControlSet then try ControlSet001
+> # on windows 7, "services" above is lowercased.
+> ls
+# shows you your bluetooth port's mac address
+Node has 1 subkeys and 0 values
+  key name
+  <aa1122334455>
+> cd aa1122334455  # CD into the folder
+> ls  
+# lists of existing devices' MAC addresses
+Node has 0 subkeys and 1 values
+  size     type            value name             [value if type DWORD]
+    16  REG_BINARY        <001f20eb4c9a>
+> hex 001f20eb4c9a
+=> :00000 XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX ...ignore..chars..
+# ^ the XXs are the pairing key
+Make a note of which Bluetooth device MAC address matches which paring key. The mint/ubuntu one won't need the spaces in-between. Ignore the :00000
+

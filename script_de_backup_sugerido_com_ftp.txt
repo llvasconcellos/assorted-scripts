@@ -1,0 +1,47 @@
+I found usefull to perform a full psa dump, full tar of /var/www directory and full mysql dump using the following script (which upload everything via FTP):
+
+/root/ftpbackup/ftpbackup.sh
+[PHP]
+#!/bin/sh
+
+tdy=`date +%d%m%Y`
+mysqluser="admin"
+mysqlpass="_thePassword_"
+
+cd /root/ftpbackup
+
+/usr/local/psa/bin/pleskbackup --all /root/ftpbackup/dump-$tdy-PSA
+tar -cvf /root/ftpbackup/dump-$tdy-WWW.tar /var/www
+mysqldump -u$mysqluser -p$mysqlpass --all-databases > dump-$tdy-MySQL.sql
+gzip dump-$tdy-MySQL.sql
+gzip dump-$tdy-WWW.tar
+
+## username & password are in /root/.netrc
+for f in $(ls dump-$tdy*); do
+ftp theserver.com &> /root/ftpbackup/ftp_$f.log <<EOFTP
+type binary
+put $f
+quit
+EOFTP
+done
+[/PHP]
+
+The content of the /root/.netrc:
+[PHP]
+machine theserver.com
+login ftpuser
+password ftppass
+[/PHP]
+
+After the execution, this'll upload three files to the FTP server:
+
+dump-dmy-PSA
+the full serveur dump using psa backup tool
+
+dump-dmy-WWW.tar.gz
+the tar of the /var/www directory
+
+dump-dmy-MySQL.gz
+the full mysql server dump using the mysqldump command
+
+(replace dmy by the day/month/year) 

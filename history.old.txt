@@ -1,0 +1,997 @@
+    1  sudo dmesg
+    2  sudo grep nvidia /var/log/Xorg.0.log
+    3  sudo cat /var/log/Xorg.0.log
+    4  sudo su
+    5  rm -rf .local/share/cinnamon/
+    6  rm -rf .cinnamon/
+    7  reboot
+    8  syslog
+    9  sudo nemo
+   10  exit
+   11  adb
+   12  ./studio.sh 
+   13  adb devices
+   14  exit
+   15  adb
+   16  adb devices
+   17  adb kill-server
+   18  adb devices
+   19  fastboot devices
+   20  fastboot
+   21  fastboot --help
+   22  sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
+   23  sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
+   24  sudo apt-get install lib32bz2-1.0
+   25  sudo apt-get install libbz2-1.0:i386
+   26  sudo apt-get install heimdall-flash heimdall-flash-frontend 
+   27  cd Downloads/
+   28  heimdall version
+   29  ls -l
+   30  md5 lineage-15.1-20181220-UNOFFICIAL-herolte_signed.zip 
+   31  md5sum lineage-15.1-20181220-UNOFFICIAL-herolte_signed.zip 
+   32  adb kill-server
+   33  heimdall print-pit
+   34  md5sum twrp-3.2.3-0-herolte.img
+   35  cat twrp-3.2.3-0-herolte.img.md5 
+   36  heimdall flash --RECOVERY twrp-3.2.3-0-herolte.img --no-reboot
+   37  sudo apt-get update
+   38  sudo apt install samba
+   39  sudo  apt remove blueberry -y && apt install blueman
+   40  sudo apt update
+   41  cd Downloads/
+   42  md5sum lineage-14.1-20181224-nightly-herolte-signed.zip 
+   43  sha256sum lineage-14.1-20181224-nightly-herolte-signed.zip 
+   44  dmesg
+   45  sudo su
+   46  sudo service smb status
+   47  sudo service samba status
+   48  sudo service smbd status
+   49  sudo service smbd start
+   50  sudo service smbd status
+   51  sudo su
+   52  sudo apt update
+   53  sudo apt install remmina
+   54  sudo apt install remmina-plugin-rdp 
+   55  sudo service smbd restart
+   56  dmesg
+   57  sudo service smbd restart
+   58  sudo smbpasswd -a leonardo
+   59  sudo service smbd restart
+   60  exit
+   61  sudo visudo
+   62  sudo
+   63  sudo su
+   64  exit
+   65  sudo 
+   66  sudo su
+   67  exit
+   68  sudo apt-get install software-properties-common
+   69  sudo add-apt-repository ppa:team-xbmc/ppa
+   70  sudo apt update
+   71  sudo apt install kodi
+   72  ntfsfix
+   73  ntfsfix /dev/sdb1
+   74  sudo ntfsfix /dev/sdb1
+   75  cd /media/leonardo/
+   76  ls -l
+   77  sudo apt purge kodi
+   78  sudo apt install mediatomb
+   79  cd .config/
+   80  ls -l
+   81  ls -la
+   82  gerbera 
+   83  ls -l
+   84  cd gerbera/
+   85  ls -l
+   86  cd ..
+   87  rm -R gerbera/
+   88  cd /opt
+   89  ls
+   90  ls -l
+   91  cd /etc/gerbera/
+   92  ls
+   93  ls -l
+   94  sudo su
+   95  sudo service gerbera restart
+   96  cd /mnt
+   97  ls -l
+   98  cd FAFC12BAFC12715D/
+   99  ls
+  100  cd ..
+  101  rm FAFC12BAFC12715D/
+  102  rmdir FAFC12BAFC12715D/
+  103  sudo rmdir FAFC12BAFC12715D/
+  104  exit
+  105  cd /etc/gerbera/
+  106  ls -l
+  107  config.xml
+  108  sudo nano config.xml 
+  109  exit
+  110  cd Downloads/
+  111  git clone https://github.com/linuxerwang/rkflashkit
+  112  sudo apt update
+  113  sudo apt install git
+  114  git clone https://github.com/linuxerwang/rkflashkit
+  115  cd rkflashkit/
+  116  ./waf debian
+  117  sudo apt install python-gtk2
+  118  sudo dpkg -i rkflashkit_0.1.5_all.deb 
+  119  cd ..
+  120  git clone https://github.com/rk3066/rk-tools.git
+  121  exit
+  122  sudo ./upgrade_tool uf ../x5mini-rk3066-250/x5mini-rk3066-250.img 
+  123  exit
+  124  cd /etc/samba/
+  125  ls -l
+  126  cat smb.conf
+  127  cd /etc/gerbera/
+  128  ls
+  129  sudo nano config.xml
+  130  sudo service gerbera restart
+  131  cd ..
+  132  ls -l
+  133  cd samba/
+  134  l
+  135  sudo nano smb.conf
+  136  sudo service samba restart
+  137  sudo service smbd restart
+  138  cd ../gerbera/
+  139  ls
+  140  sudo nano config.xml 
+  141  sudo service gerbera restart
+  142  sudo apt update
+  143  sudo apt install imagemagick
+  144  find ./
+  145  cd Videos/
+  146  ffmpeg -codecs
+  147  ffmpeg -codecs | grep mp4
+  148  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -an -b 400 -vcodec mpeg4 teste.mp4
+  149  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -acodec libmp3lame -ab 64k -b 400 -vcodec mpeg4 -vf scale=-1:480 teste.mp4
+  150  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -acodec libmp3lame -ab 64k -b:v 400 -vcodec mpeg4 -vf scale=-1:480 teste.mp4
+  151  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -acodec libmp3lame -ab 64k -b:v 400 -vcodec mpeg4 -vf scale=-1:480 -framerate 24 teste2.mp4
+  152  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -acodec libmp3lame -ab 64k -b:v 400 -vcodec mpeg4 -vf scale=-1:480 -r 24 teste2.mp4
+  153  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -acodec libmp3lame -ab 64k -b:v 800 -vcodec mpeg4 -vf scale=-1:480 -r 24 teste3.mp4
+  154  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 1 -an -b:v 800 -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 /dev/null && ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 2 -acodec libmp3lame -ab 64k -b:v 800 -vcodec mpeg4 -vf scale=-1:480 -r 24 teste3.mp4
+  155  ls -l
+  156  rm teste3.mp4 
+  157  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 1 -an -b:v 800 -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 /dev/null && \ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 2 -acodec libmp3lame -ab 64k -b:v 800 -vcodec mpeg4 -vf scale=-1:480 -r 24 teste3.mp4
+  158  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 1 -an -b:v 64k -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 /dev/null && ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 2 -acodec libmp3lame -ab 64k -b:v 64k -vcodec mpeg4 -vf scale=-1:480 -r 24 teste3.mp4
+  159  ffmpeg -y -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 1 -an -b:v 64k -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 /dev/null && ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 2 -acodec libmp3lame -ab 64k -b:v 64k -vcodec mpeg4 -vf scale=-1:480 -r 24 teste3.mp4
+  160  ffmpeg -y -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 1 -acodec libmp3lame -ab 64k -b:v 64k -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 /dev/null && ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 2 -acodec libmp3lame -ab 64k -b:v 64k -vcodec mpeg4 -vf scale=-1:480 -r 24 teste3.mp4
+  161  ffmpeg -y -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 1 -acodec libmp3lame -ab 64k -b:v 128k -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 /dev/null && ffmpeg -y -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 2 -acodec libmp3lame -ab 64k -b:v 128k -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 teste3.mp4
+  162  ffmpeg -y -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 1 -an -b:v 128k -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 /dev/null && ffmpeg -y -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 2 -an -b:v 128k -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 teste3.mp4
+  163  ffmpeg -y -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 1 -an -b:v 800k -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 /dev/null && ffmpeg -y -i Joao\ Pessoa\ -\ Praias_1.mp4 -pass 2 -an -b:v 800k -vcodec mpeg4 -vf scale=-1:480 -r 24 -f mp4 teste3.mp4
+  164  ffmpeg -i Joao\ Pessoa\ -\ Praias_1.mp4 -acodec libmp3lame -ab 64k -b:v 200k -c:v mjpeg  -vf scale=-1:480 -r 24 teste.mp4
+  165  exit
+  166  man ffmpeg
+  167  ls -l
+  168  man ffmpeg
+  169  man ffmpeg | grep joint
+  170  man ffmpeg | grep aq
+  171  man ffmpeg
+  172  man ffmpeg | grep vbr
+  173  cd Apartamento\ Batel/
+  174  ls -l
+  175  find ./ -iname '*.jpg' -exec convert \{} -verbose -resize 800x400\> 
+  176  find ./ -iname '*.jpg' -exec convert \{} -verbose -resize 800x400\> \{} 
+  177  find ./ -iname '*.jpg' -exec 'convert \{} -verbose -resize 800x400" > \{}'
+  178  find ./ -iname "*.jpg" -exec "convert \{} -verbose -resize 800x400 > \{}"
+  179  find ./ -iname '*.jpg' -exec convert \{} -verbose -resize 800x400\> \{} \
+  180  find ./ -iname '*.jpg' -exec convert \{} -verbose -resize 800x400\> \{} 
+  181  sudo apt install phatch
+  182  find ./ -iname \*.jpg -exec convert -verbose -quality 80 -resize 800x400\> \{} 
+  183  convert
+  184  find ./ -iname \*.jpg -exec convert -verbose -quality 80 -resize 800x400\> \{} 
+  185  find ./ -iname \*.jpg -exec convert -verbose -quality 80 -resize 800x400\> \{} \{}\
+  186  mkdir convertidas
+  187  find ./ -iname \*.jpg -exec convert -verbose -quality 80 -resize 800x400\> "{}" "convertidas/{}" \;
+  188  convert
+  189  convert --help
+  190  man convert
+  191  find ./ -iname \*.jpg -exec convert -verbose -quality 80 -resize 800x480\> "{}" "convertidas/{}" \;
+  192  find ./ -iname \*.jpg -exec convert -verbose -quality 80 -resize 800x800\> "{}" "convertidas/{}" \;
+  193  find ./ -iname \*.jpg -exec convert -verbose -quality 80 -resize 384000@ "{}" "convertidas/{}" \;
+  194  find ./ -iname \*.jpg -exec convert -verbose -quality 80 -resize x480\> "{}" "convertidas/{}" \;
+  195  ls -l
+  196  find ./ -iname \*.jpg -exec convert -verbose -quality 80 -resize 800x480\> "{}" "convertidas/{}" \;
+  197  sudo apt install gimp
+  198  convert | grep "auto-ori
+  199  convert | grep "auto-ori"
+  200  find ./ -iname \*.jpg -exec convert -verbose -auto-orient -quality 80 -resize 800x480\> "{}" "convertidas/{}" \;
+  201  ls
+  202  cd ..
+  203  ls -l
+  204  cd Apartamento\ Batel/
+  205  find ./ -iname \*.jpg -exec convert -verbose -auto-orient -quality 80 -resize 800x480\> "{}" "convertidas/{}" \;
+  206  ls
+  207  find ./ -iname \*.jpg -exec convert -verbose -auto-orient -quality 80 -resize 800x480\> "{}" "convertidas/{}" \;
+  208  cd ..
+  209  ls -l
+  210  find ./ -iname \*.jpg -exec convert -verbose -auto-orient -quality 80 -resize 800x480\> "{}" "{}" \;
+  211  sudo apt install xvidenc
+  212  dmesg
+  213  sudo apt update
+  214  sudo apt install ffmpeg
+  215  sudo apt install vlc-plugin-visualization 
+  216  sudo apt install vlc-data 
+  217  sudo apt autoremove
+  218  sudo apt install mp4v2-utils 
+  219  sudo apt install vlc-plugin-pulse
+  220  sudo apt install ubuntu-restricted-extras 
+  221  sudo apt install ubuntu-restricted-addons 
+  222  sudo apt install mint-meta-codecs
+  223  cd /usr/bin/vlc
+  224  cd /usr/bin
+  225  ls vlc
+  226  ls -l vlc
+  227  ls -l
+  228  cd ..
+  229  ls -l
+  230  share
+  231  ls
+  232  ls -l
+  233  cd share
+  234  ls -l
+  235  cd vlc/
+  236  l
+  237  ls -l
+  238  cd utils/
+  239  ls
+  240  ls -l
+  241  cd ..
+  242  ls -l
+  243  cd ..
+  244  ls -l
+  245  cd /var/log
+  246  ls
+  247  ls -l
+  248  exit
+  249  cd Porta\ Retratos
+  250  exit
+  251  history
+  252  exit
+  253  cd Pictures/
+  254  ls
+  255  cd Porta\ Retratos
+  256  find ./ -iname \*.jpg -exec convert -verbose -auto-orient -quality 80 -resize 800x480\> "{}" "{}" \;
+  257  cd ..
+  258  ls -l
+  259  cd fdasfdas/
+  260  find ./ -iname \*.jpg -exec convert -verbose -auto-orient -quality 80 -resize 800x480\> "{}" "{}" \;
+  261  cd ..
+  262  cd ~/Pictures/
+  263  ls
+  264  cd Porta\ Retratos
+  265  find ./ -iname \*.jpg -exec convert -verbose -auto-orient -quality 80 -resize 800x480\> "{}" "{}" \;
+  266  cd Downloads/
+  267  ls
+  268  chmod +x JD2Setup_x64.sh 
+  269  ./JD2Setup_x64.sh 
+  270  adb devices
+  271  adb shell
+  272  adb root
+  273  adb remount
+  274  nano
+  275  adb shell
+  276  adb root
+  277  adb shell
+  278  ls -l
+  279  cd /Down
+  280  cd Downloads/
+  281  lsd
+  282  ls
+  283  ls -l
+  284  adb install -r com.android.providers.calendar_10.0.00.12-1000000012_minAPI25\(nodpi\)_apkmirror.com.apk 
+  285  adb shell
+  286  adb logcat
+  287  exit
+  288  cat data.ext4.win??? | tar xvf -
+  289  cat system.ext4.win??? | tar xvf -
+  290  exit
+  291  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  292  sudo apt-get install apt-transport-https
+  293  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+  294  sudo apt update
+  295  sudo apt install sublime-text
+  296  exit
+  297  pip3 install --user -r requirements.txt
+  298  sudo apt install python3-pip
+  299  pip3 install --user -r requirements.txt
+  300  sudo apt-get install python-setuptools
+  301  pip3 install --user -r requirements.txt
+  302  sudo apt-get install python3-setuptools
+  303  pip3 install --user -r requirements.txt
+  304  pip install wheel
+  305  pip3 install wheel
+  306  pip3 install --user -r requirements.txt
+  307  ./sonota.py 
+  308  ls -l
+  309  nano
+  310  nano sonota.py 
+  311  ./sonota.py 
+  312  exit
+  313  adb devices
+  314  adb shell
+  315  adb logcat
+  316  adb shell
+  317  sudo apt install lz4
+  318  sudo apt install liblz4-1
+  319  lz4
+  320  sudo apt install liblz4-tool 
+  321  cd Downloads/
+  322  ls
+  323  ls -l
+  324  cd AP_G930FXXS3ERKA_CL13895453_QB20534409_REV00_user_low_ship_meta/
+  325  ls
+  326  ls -l
+  327  unlz4 system.img.lz4 
+  328  nemo
+  329  history | grep tar
+  330  cat system.ext4.win??? | tar xvf -
+  331  adb shell
+  332  exit
+  333  fdisk -l ./system.img
+  334  mkdir system
+  335  mount -o loop system.img ./system
+  336  su mount -o loop system.img ./system
+  337  sudo mount -o loop system.img ./system
+  338  sudo mount -t auto -o loop system.img ./system
+  339  fdisk -lu ./system.img
+  340  sudo mount -t ext4 -o loop system.img ./system
+  341  sudo mount -t ext4 -o loop system.img /home/leonardo/Downloads/AP_G930FXXS3ERKA_CL13895453_QB20534409_REV00_user_low_ship_meta/system
+  342  modprobe | gre loop
+  343  modprobe | grep loop
+  344  modprobe
+  345  modprobe -h
+  346  sudo mount -t ext4 -o loop system.img ./system
+  347  sudo mount -t auto -o loop system.img ./system
+  348  sudo mount -t auto system.img ./system
+  349  sudo mount -t auto ./system.img ./system
+  350  sudo mount -t auto /home/leo/system.img ./system
+  351  sudo mount -t auto system.img ./system
+  352  sudo mount -t ext4 system.img ./system
+  353  sudo mount -t ext4 -o loop system.img ./system
+  354  sudo mount -t auto -o loop system.img ./system
+  355  sudo mount -t auto -o loop /home/leonardo/Downloads/xx/system.img /home/leonardo/Downloads/xx/system
+  356  sudo apt install simg2img 
+  357  ls
+  358  ls -l
+  359  cd ..
+  360  ls
+  361  ls -l
+  362  cd xx
+  363  ls
+  364  ls -l
+  365  ls
+  366  simg2img system.img system.raw.img
+  367  notepad
+  368  cd /etc
+  369  cd network
+  370  cat interfaces
+  371  cd ..
+  372  cat resolv.conf 
+  373  cd etc
+  374  cd /etc
+  375  grep -rnw '/etc' -e 'getty'
+  376  sudo grep -rnw '/etc' -e 'getty'
+  377  exit
+  378  uname -a
+  379  sudo apt update
+  380  sudo apt install qemu-user-static binfmt-support debootstrap
+  381  cd /media/
+  382  ls
+  383  cd leonardo/
+  384  ls
+  385  ls -l
+  386  cd linuxroot/
+  387  sudo qemu-debootstrap --verbose --variant=minbase --arch=armhf wheezy /media/leonardo/linuxroot http://ftp.debian.org/debian
+  388  cd ..
+  389  cd mnt
+  390  mkdir minix-linux
+  391  sudo mkdir minix-linux
+  392  cd minix-linux/
+  393  fdisk
+  394  sudo qemu-debootstrap --verbose --variant=minbase --arch=armhf wheezy /mnt/minix-linux http://ftp.debian.org/debian
+  395  ls -l
+  396  ls -la
+  397  cd ..
+  398  mount -t proc proc /mnt/minix-linux/proc
+  399  sudo mount -t proc proc /mnt/minix-linux/proc
+  400  sudo mount -t sysfs sysfs /mnt/minix-linux/sys
+  401  sudo mount -o bind /dev /mnt/minix-linux/dev
+  402  sudo mount -t devpts devpts /mnt/minix-linux/dev/pts
+  403  chroot /mnt/minix-linux/
+  404  sudo chroot /mnt/minix-linux/
+  405  ls -l
+  406  umount /mnt/minix-linux/{proc,sys,dev/pts,dev,}
+  407  sudo umount /mnt/minix-linux/{proc,sys,dev/pts,dev,}
+  408  lsof /mnt/minix-linux/
+  409  lsof https://www.youtube.com/watch?v=xZjdYMFkvwA
+  410  lsof | grep '/dev/mmcblk0p1' 
+  411  sudo lsof | grep '/dev/mmcblk0p1' 
+  412  lsof | grep '/dev/mmcblk0p1' 
+  413  fuser -kim /mnt/minix-linux
+  414  sudo umount /mnt/minix-linux/{proc,sys,dev/pts,dev,}
+  415  fuser -m '/dev/mmcblk0p1' 
+  416  fuser -kim '/dev/mmcblk0p1' 
+  417  sudo umount /mnt/minix-linux/{proc,sys,dev/pts,dev,}
+  418  cd ~
+  419  dmesg
+  420  cd /mnt
+  421  ls
+  422  ls -l
+  423  cd mmc-SA16G_0x18465c0e-part1/
+  424  ls
+  425  cd ..
+  426  rm mmc-SA16G_0x18465c0e-part1/
+  427  sudo rmdir mmc-SA16G_0x18465c0e-part1/
+  428  ls -l
+  429  cd minix-linux/
+  430  ls
+  431  ls l
+  432  cd ..
+  433  sudo rmdir minix-linux/
+  434  ls -l
+  435  cd ..
+  436  cd media/
+  437  ls
+  438  cd leonardo
+  439  ls -l
+  440  dmegs
+  441  dmesg
+  442  cd etc
+  443  cd /etc
+  444  cat hostname 
+  445  adb devices
+  446  adb killserver
+  447  adb kill-server
+  448  lsusb
+  449  adb devices\
+  450  adb devices
+  451  adb kill-server
+  452  adb devices
+  453  adb kill-server
+  454  sudo adb devices
+  455  adb kill-server
+  456  adb devices
+  457  adb kill-server
+  458  lsusb
+  459  adb kill-server
+  460  adb devices
+  461  adb kill-server
+  462  lsusb
+  463  adb devices
+  464  adb reboot bootloader
+  465  sudo umount /mnt/minix-linux/{proc,sys,dev/pts,dev,}
+  466  history | grep rkflashtool
+  467  history | grep rk
+  468  ls
+  469  cd Downloads/
+  470  ls
+  471  ls -l
+  472  cd history
+  473  history
+  474  ls -l
+  475  cd rkflashkit/
+  476  ls -l
+  477  sudo rkflashkit backup @recovery recovery-backup.img
+  478  sudo rkflashkit flash @recovery recovery.img 
+  479  sudo rkflashkit reboot
+  480  cd /mnt
+  481  ls -l
+  482  sudo qemu-debootstrap --verbose --variant=minbase --arch=armhf wheezy /mnt/minix http://ftp.br.debian.org/debian
+  483  mount -t proc proc /mnt/minix/proc
+  484  sudo mount -t proc proc /mnt/minix/proc
+  485  sudo mount -t sysfs sysfs /mnt/minix/sys
+  486  sudo mount -o bind /dev /mnt/minix/dev
+  487  sudo mount -t devpts devpts /mnt/minix/dev/pts
+  488  chroot /mnt/tmp
+  489  chroot /mnt/minix
+  490  sudo chroot /mnt/minix
+  491  sudo umount /mnt/minix/{proc,sys,dev/pts,dev,}
+  492  mount
+  493  sudo mke2fs /dev/mmcblk0p1 -O ^metadata_csum
+  494  umount /dev/mmcblk0p1 
+  495  sudo umount /dev/mmcblk0p1 
+  496  sudo mke2fs /dev/mmcblk0p1 -O ^metadata_csum
+  497  history
+  498  sudo mke2fs -t ext4 /dev/mmcblk0p1 -O ^metadata_csum
+  499  sudo e2label /dev/mmcblk0p1 linuxroot
+  500  history
+  501  history --help
+  502  $ history | cut -c 8-
+  503  history | cut -c 8-
+  504  cd /etc
+  505  ls -l
+  506  cd apt
+  507  ls -l
+  508  cat sources.list
+  509  cd sources.list.d/
+  510  ls -l
+  511  cat google-chrome.list 
+  512  sudo umount /dev/mmcblk0p1 
+  513  sudo mke2fs /dev/mmcblk0p1 -O ^metadata_csum
+  514  cd /mnt
+  515  ls
+  516  sudo apt-get update
+  517  sudo apt-get install gparted
+  518  ls -l
+  519  cd minix/
+  520  ls
+  521  cd ..
+  522  sudo qemu-debootstrap --verbose --variant=minbase --arch=armhf wheezy /mnt/minix http://ftp.br.debian.org/debian
+  523  mount -t proc proc /mnt/minix/proc
+  524  sudo mount -t proc proc /mnt/minix/proc
+  525  sudo mount -t sysfs sysfs /mnt/minix/sys
+  526  sudo mount -o bind /dev /mnt/minix/dev
+  527  sudo mount -t devpts devpts /mnt/minix/dev/pts
+  528  sudo chroot /mnt/minix
+  529  sudo shutdown -h now
+  530  history | cut -c 8-
+  531  mount
+  532  sudo nemo
+  533  $ history | cut -c 8-
+  534  history | cut -c 8-
+  535  sudo mount /dev/mmcblk0p1 /mnt/minix/
+  536  cd /mnt/minix/
+  537  ls -l
+  538  cd ..
+  539  sudo qemu-debootstrap --verbose --variant=minbase --arch=armhf wheezy /mnt/minix http://ftp.br.debian.org/debian
+  540  mount -t proc proc /mnt/minix/proc
+  541  sudo mount -t proc proc /mnt/minix/proc
+  542  sudo mount -t sysfs sysfs /mnt/minix/sys
+  543  sudo mount -o bind /dev /mnt/minix/dev
+  544  sudo mount -t devpts devpts /mnt/minix/dev/pts
+  545  sudo chroot /mnt/minix
+  546  sudo umount /mnt/tmp/{proc,sys,dev/pts,dev,}
+  547  sudo umount /mnt/minix/{proc,sys,dev/pts,dev,}
+  548  sudo shutdown -h now
+  549  sudo mount /dev/mmcblk0p1 /mnt/minix/
+  550  mount -t proc proc /mnt/minix/proc
+  551  sudo mount -t proc proc /mnt/minix/proc
+  552  sudo mount -t sysfs sysfs /mnt/minix/sys
+  553  sudo mount -o bind /dev /mnt/minix/dev
+  554  sudo mount -t devpts devpts /mnt/minix/dev/pts
+  555  sudo chroot /mnt/minix
+  556  exit
+  557  sudo visudo
+  558  exit
+  559  sudo chroot /mnt/minix
+  560  exit
+  561  sudo shutdown -r now
+  562  adb devices
+  563  adb shell]
+  564  adb shell
+  565  adb devices
+  566  adb kill-server
+  567  adb 
+  568  adb kill-server
+  569  adb devices
+  570  adb kill-server
+  571  adb devices
+  572  adb kill-server
+  573  lsusb
+  574  adb devices
+  575  adb --help
+  576  adb reboot bootloader
+  577  sudo mount /dev/mmcblk0p1 /mnt/minix/
+  578  sudo umount /mnt/minix
+  579  mount
+  580  sudo mount /dev/mmcblk0p1 /mnt/minix/
+  581  sudo umount /mnt/minix
+  582  adb shell
+  583  sudo mount /dev/mmcblk0p1 /mnt/minix/
+  584  sudo umount /mnt/minix
+  585  lsusb
+  586  adb devices
+  587  adb kill-server
+  588  adb devices
+  589  adb kill-server
+  590  sudo mount /dev/mmcblk0p1 /mnt/minix/
+  591  adb push ./su /sdcard
+  592  adb shell
+  593  exit
+  594  adb push ./bluetooth.ko 
+  595  adb push ./bluetooth.ko /
+  596  adb shell
+  597  adb push ./bluetooth.ko /sdcard
+  598  adb shell
+  599  exit
+  600  adb devices
+  601  adb push ./busybox /storage
+  602  adb shell
+  603  adb push ./busybox /sdcard
+  604  adb shell
+  605  adb
+  606  adb root
+  607  adb kill-server
+  608  adb root
+  609  adb shell
+  610  adb kill-server
+  611  adb shell
+  612  mount -o remount,rw /system
+  613  adb shell "mount -o remount,rw /system"
+  614  umount /mnt/minix 
+  615  sudo umount /mnt/minix 
+  616  lsof
+  617  lsof | grep mm
+  618  lsof | grep "/mnt/minix"
+  619  adb kill-server
+  620  lsof | grep "/mnt/minix"
+  621  exit
+  622  adb shell
+  623  adb kill-server
+  624  adb
+  625  adb devices
+  626  adb kill-server
+  627  adb devices
+  628  adb shell
+  629  adb root
+  630  adb shell
+  631  adb kill-server
+  632  adb shell
+  633  exit
+  634  adb shell
+  635  exit
+  636  nemo
+  637  dmesg
+  638  exit
+  639  nemo
+  640  which nemo
+  641  ls -l /usr/bin/nemo
+  642  cd Downloads/
+  643  ls
+  644  ls -la
+  645  cp SuperSU-MePro-v9.9.0_build_179_A2ZAPK.COM.apk supersumepro.zip
+  646  mkdir lixoooo
+  647  cp supersumepro.zip ./lixo
+  648  cd lixo
+  649  rm lixo
+  650  cp supersumepro.zip ./lixoooo/
+  651  cd lixoooo/
+  652  ls
+  653  ls -l
+  654  unzip supersumepro.zip 
+  655  cd assets/
+  656  ls
+  657  mv defeatem.apk defeatem.zip
+  658  unzip defeatem.zip 
+  659  cd ..
+  660  ls -l
+  661  adb devices
+  662  adb push SuperSU-MePro-v9.9.0_build_179_A2ZAPK.COM.apk /sdcard
+  663  adb restart
+  664  adb reboot
+  665  shutdow -r now
+  666  sudo shutdow -r now
+  667  sudo shutdown -r now
+  668  dmesg
+  669  lsmod
+  670  dmesg
+  671  lsusb
+  672  adb devices
+  673  adb shell
+  674  adb devices
+  675  adb kill-server
+  676  adb devices
+  677  adb kill-server
+  678  adb devices
+  679  adb shell
+  680  adb shell cat /proc/last_kmsg > last_kmsg
+  681  nano
+  682  adb shell
+  683  adb shell
+  684  adb devices
+  685  mount /dev/mmcblk0p1 /mnt/minix/
+  686  sudo mount /dev/mmcblk0p1 /mnt/minix/
+  687  cd /mnt/minix/
+  688  ls
+  689  l -l
+  690  umount /dev/mmcblk0p1
+  691  sudo umount /dev/mmcblk0p1
+  692  umount /mnt/minix
+  693  sudo umount /mnt/minix
+  694  cd ..
+  695  sudo umount /mnt/minix
+  696  adb shell
+  697  adb reboot bootloader
+  698  adb devices
+  699  adb reboot fastboot
+  700  adb reboot bootloader
+  701  history | grep rkflashkit
+  702  dmesg
+  703  fdisk -lu ./x5-rk3066-250.img 
+  704  simg2img x5-rk3066-250.img x5-rk3066-250.raw.img
+  705  sudo mount -t ext4 -o loop x5-rk3066-250.img /mnt/lixo
+  706  sudo mount -o loop x5-rk3066-250.img /mnt/lixo
+  707  sudo mount -t auto -o loop x5-rk3066-250.img /mnt/lixo
+  708  losetup /dev/loop0 x5-rk3066-250.img -o 512
+  709  sudo losetup /dev/loop0 x5-rk3066-250.img -o 512
+  710  losetup /dev/loop1 x5-rk3066-250.img -o 512
+  711  sudo losetup /dev/loop1 x5-rk3066-250.img -o 512
+  712  sudo losetup /dev/loop2 x5-rk3066-250.img -o 512
+  713  sudo losetup /dev/loop5 x5-rk3066-250.img -o 512
+  714  sudo mount -t auto -o loop x5-rk3066-250.img /mnt/lixo
+  715  sudo mount -t auto /dev/loop5 /mnt/lixo
+  716  rkflashkit part
+  717  sudo rkflashkit part
+  718  rkflashkit --help
+  719  sudo rkflashkit erase misc
+  720  sudo rkflashkit erase kernel
+  721  sudo rkflashkit erase boot
+  722  sudo rkflashkit erase recovery
+  723  sudo rkflashkit erase backup
+  724  sudo rkflashkit erase cache
+  725  sudo rkflashkit erase userdata
+  726  sudo rkflashkit erase metadata
+  727  sudo rkflashkit erase kpanic
+  728  sudo rkflashkit erase system
+  729  sudo rkflashkit erase user
+  730  exit
+  731  sudo rkflashkit flash @recovery recovery.img
+  732  adb devices
+  733  sudo rkflashkit flash @recovery recovery.img
+  734  adb devices
+  735  sudo rkflashkit reboot
+  736  sudo mount /dev/mmcblk0p1 /mnt/minix/
+  737  sudo umount /mnt/minix
+  738  sudo rkflashkit part
+  739  sudo rkflashkit flash @recovery 1080-3.0.8-alok+recov.img 
+  740  ls -l
+  741  sudo rkflashkit reboot
+  742  sudo rkflashkit flash @recovery 1080-3.0.8-alok+recov.img 
+  743  sudo rkflashkit part
+  744  ls -l
+  745  ls -l\
+  746  ls -l
+  747  cd debian/
+  748  ls
+  749  ls -l
+  750  cd DEBIAN/
+  751  ls
+  752  ls -l
+  753  cd ..
+  754  ls -l
+  755  cd ..
+  756  ls -l
+  757  history upgrade_tool
+  758  history | grep upgrade_tool
+  759  cd Linux_Upgrade_Tool_v1.2/
+  760  sudo ./upgrade_tool uf ../X5/x5-rk3066-250.img 
+  761  sudo ./upgrade_tool uf ../x5mini-rk3066-250/x5mini-rk3066-250.img
+  762  history | grep lz
+  763  history | grep fdisk
+  764  history | grep system.img
+  765  mkdir /mnt/lixo
+  766  sudo mkdir /mnt/lixo
+  767  part
+  768  cd ..
+  769  ls -l
+  770  cd tools-master/
+  771  ls
+  772  ls -l
+  773  ./unpackbootimg 
+  774  ./unpackbootimg -i ../X5/x5-rk3066-250.img 
+  775  cd ..
+  776  ls -l
+  777  cd X5
+  778  ls
+  779  ls -l
+  780  mount
+  781  sudo mount
+  782  sudo mount -o loop,offset=4194304,sizelimit=12582912 x5-rk3066-250.img /mnt/lixo/
+  783  sudo ./upgrade_tool --help
+  784  sudo ./upgrade_tool --h
+  785  cd ..
+  786  ls -l
+  787  cd Linux_Upgrade_Tool_v1.2/
+  788  ls -l
+  789  ./upgrade_tool 
+  790  ./upgrade_tool -h
+  791  sudo ./upgrade_tool uf ../x5mini-rk3066-250/x5mini-rk3066-250.img 
+  792  rkflashkit part
+  793  shutdown -r now
+  794  cd Downloads
+  795  cd Neomode\ X5\ Mini\ Custom\ Rom/
+  796  ls -l
+  797  cd ncr_x5mini_442_beta/
+  798  ls -l
+  799  cd rockdev/
+  800  ls
+  801  ls -l
+  802  cd Image/
+  803  ls -l
+  804  adb devices
+  805  adb shell
+  806  adb kill-server
+  807  adb devices
+  808  adb kill-server
+  809  adb devices
+  810  cd /etc/udev
+  811  ls -l
+  812  cd rules.d/
+  813  ls -l
+  814  ls -la
+  815  cd ..
+  816  ls -l
+  817  cat udev.conf 
+  818  sudo su
+  819  adb
+  820  ls -l
+  821  sudo su
+  822  exit
+  823  cd Downloads/X5
+  824  ls
+  825  ls -l
+  826  sudo mount -o loop,offset=4194304,sizelimit=12582912 x5-rk3066-250.img /mnt/lixo/
+  827  sudo mount -t auto -o loop,offset=4194304,sizelimit=12582912 x5-rk3066-250.img /mnt/lixo/
+  828  sudo mount -t ext4 -o loop,offset=4194304,sizelimit=12582912 x5-rk3066-250.img /mnt/lixo/
+  829  fdisk -l x5-rk3066-250.img
+  830  rm x5-rk3066-250.raw.img 
+  831  ls -l
+  832  rm x5-rk3066-250\ \(copy\).
+  833  rm x5-rk3066-250\ \(copy\).*
+  834  ls -l
+  835  Disk x5-rk3066-250.img: 851,1 MiB, 892395520 bytes, 1742960 sectors
+  836  Units: sectors of 1 * 512 = 512 bytes
+  837  Sector size (logical/physical): 512 bytes / 512 bytes
+  838  I/O size (minimum/optimal): 512 bytes / 512 bytes
+  839  history | grep udev
+  840  history
+  841  history | grep udev
+  842  history | grep rules
+  843  exit
+  844  history | grep rules
+  845  cd /etc/udev/rules.d
+  846  nano 50-minix.conf
+  847  ls -l
+  848  lsusb
+  849  nano 51-minix.rules
+  850  sudo nano 51-minix.rules
+  851  ls -l
+  852  sudo udevadm control --reload-rules
+  853  adb devices
+  854  adb kill-server
+  855  adb devices
+  856  ls -l
+  857  mv 51-minix.rules 51-android.rules 
+  858  sudo mv 51-minix.rules 51-android.rules 
+  859  sudo nano 51-android.rules 
+  860  chmod a+r ./51-android.rules 
+  861  sudo chmod a+r ./51-android.rules 
+  862  adb kill-server
+  863  sudo udevadm control --reload-rules
+  864  adb devices
+  865  adb reboot bootloader
+  866  history | grep rkflash
+  867  exit
+  868  ls -l
+  869  sudo rkflashkit flash @boot boot.img @kernel kernel.img @misc misc.img @recovery recovery.img @system system.img
+  870  sudo rkflashkit reboot
+  871  adb devices
+  872  ls -l
+  873  adb reboot bootloader
+  874  rkflashkit flash @kernel kernel.img
+  875  rkflashkit --help
+  876  rkflashkit erase @kernel
+  877  rkflashkit flash @kernel kernel.img
+  878  rkflashkit reboot
+  879  adb devices
+  880  adb shell
+  881  adb reboot
+  882  adb shell
+  883  ls -l
+  884  cd gapps-kk-20140606-signed/
+  885  ls
+  886  ls -l
+  887  cat install-optional.sh 
+  888  ls -l
+  889  cd META-INF/
+  890  ls
+  891  cd ,,
+  892  cd ..
+  893  adb push gapps-kk-20140606-signed.zip /sdcard
+  894  adb 
+  895  adb reboot recovery
+  896  adb devices
+  897  adb sideload gapps-kk-20140606-signed.zip 
+  898  adb kill-server
+  899  adb devices
+  900  adb sideload gapps-kk-20140606-signed.zip 
+  901  adb shell
+  902  ls -l
+  903  cd gapps-kk-20140606-signed/
+  904  ls
+  905  cd system/
+  906  ls
+  907  cd app/
+  908  ls
+  909  ls -l
+  910  adb reboot bootloader
+  911  adb reboot recovery
+  912  ls -l
+  913  adb reboot bootloader
+  914  rkflashkit --help
+  915  rkflashkit backup @recovery recovery-backup.img
+  916  rkflashkit flash @recovery recovery.img 
+  917  rkflashkit reboot
+  918  adb devices
+  919  adb reboot recovery
+  920  sudo shutdown -r now
+  921  sudo rkflashkit erase @recovery
+  922  sudo rkflashkit flash @recovery recovery-backup.img 
+  923  sudo rkflashkit part
+  924  sudo rkflashkit reboot
+  925  sudo rkflashkit part
+  926  sudo rkflashkit reboot
+  927  adb reboot recovery
+  928  adb devices
+  929  adb reboot recovery
+  930  adb shell
+  931  adb reboot recovery
+  932  adb reboot bootloader
+  933  adb shell
+  934  sudo apt-get update
+  935  sudo apt-get install build-essential gcc-arm-linux-gnueabihf libncurses5-dev bison flex libssl-dev libelf-dev
+  936  sudo apt-get install zlib1g-dev lib32z1 lib32ncurses5 sharutils lzop
+  937  cd Downloads/
+  938  mkdir LEO_KERNEL_RK3066
+  939  cd LEO_KERNEL_RK3066/
+  940  git clone https://github.com/llvasconcellos/D33_KK_RK3066.git
+  941  make
+  942  cd D33_KK_RK3066/
+  943  ls -l
+  944  cd ..
+  945  make -C /home/leonardo/Downloads/LEO_KERNEL_RK3066/D33_KK_RK3066 M=$(PWD) modules
+  946  sudo apt-get update
+  947  ls -l
+  948  cd D33_KK_RK3066/
+  949  ls
+  950  ls -l
+  951  cat Kconfig 
+  952  cd D33_KK_RK3066/
+  953  ls -l
+  954  chmod +x build-leo.sh 
+  955  ./build-leo.sh 
+  956  which gcc
+  957  gcc
+  958  gcc --version
+  959  history | grep gc
+  960  sudo apt-get install gcc-6-arm-linux-gnueabihf
+  961  which gcc
+  962  sudo update-alternatives gcc
+  963  sudo update-alternatives
+  964  sudo update-alternatives --list
+  965  sudo update-alternatives --list gcc
+  966  gcc --help
+  967  gcc --version
+  968  find / -name gcc
+  969  /usr/share/doc/gcc-6-arm-linux-gnueabihf-base/gcc
+  970  ./build-leo.sh 
+  971  sudo find / -name gcc
+  972  sudo apt-get install gcc-6
+  973  sudo update-alternatives --list
+  974  sudo update-alternatives --list gcc
+  975  sudo find / -name gcc
+  976  gcc
+  977  gcc --version
+  978  sudo update-alternatives --list gcc*
+  979  sudo find / -name gcc*
+  980  which gcc
+  981  ls -l /usr/bin/gcc
+  982  ls -l /usr/bin/gcc*
+  983  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7
+  984  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10
+  985  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 20
+  986  sudo update-alternatives gcc
+  987  sudo update-alternatives --list gcc
+  988  sudo update-alternatives set gcc
+  989  sudo update-alternatives --config gcc
+  990  gcc --version
+  991  ls -l
+  992  ./build-leo.sh 
+  993  xed
+  994  xed build-leo.sh 
+  995  exit
+  996  ls -l
+  997  history > history.old.txt

@@ -1,0 +1,258 @@
+1 - fazer o update (clicar no botao da insignia do lado do relogio)
+
+2 - instalar o Remmina gtk+ remote desktop client
+$ sudo apt-get update
+$ sudo apt-get install remmina
+
+
+====================================================================
+
+Install http://liquorix.net/ Kernel
+
+http://en.kioskea.net/faq/809-debian-apt-get-no-pubkey-gpg-error
+
+
+criar um arquivo /etc/apt/sources.list.d/liquorix.list e adicionar o repositorio dentro do arquivo
+
+
+
+Mensagem de erro após adicionar o repositorio do kernel e dar apt-get update:
+
+W: A error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://liquorix.net sid InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3EFF4F272FB2CD80
+
+W: GPG error: http://archive.ubuntu.com precise Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 40976EAF437D05B5
+W: Failed to fetch http://liquorix.net/debian/dists/sid/InRelease  
+
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+
+
+
+como corrigir este erro acima:
+
+
+http://en.kioskea.net/faq/809-debian-apt-get-no-pubkey-gpg-error
+
+
+
+http://www.unixmen.com/how-to-add-medibuntu-repository-in-ubuntu-via-terminal-and-gui/
+
+=============================================================
+
+
+Resolver problemas com mouse e kworker
+
+pcie_ports=native
+pcie_ports=compat
+
+
+i915.i915_enable_rc6=1 vga=844 
+
+http://askubuntu.com/questions/59135/how-can-i-know-list-available-options-for-kernel-modules
+
+$ sudo modinfo i915
+parm:           modeset:Use kernel modesetting [KMS] (0=DRM_I915_KMS from .config, 1=on, -1=force vga console preference [default]) (int)
+parm:           fbpercrtc:int
+parm:           panel_ignore_lid:Override lid status (0=autodetect [default], 1=lid open, -1=lid closed) (int)
+parm:           powersave:Enable powersavings, fbc, downclocking, etc. (default: true) (int)
+parm:           semaphores:Use semaphores for inter-ring sync (default: -1 (use per-chip defaults)) (int)
+parm:           i915_enable_rc6:Enable power-saving render C-state 6 (default: -1 (use per-chip default) (int)
+parm:           i915_enable_fbc:Enable frame buffer compression for power savings (default: -1 (use per-chip default)) (int)
+parm:           lvds_downclock:Use panel (LVDS/eDP) downclocking for power savings (default: false) (int)
+parm:           lvds_use_ssc:Use Spread Spectrum Clock with panels [LVDS/eDP] (default: auto from VBT) (int)
+parm:           vbt_sdvo_panel_type:Override selection of SDVO panel mode in the VBT (default: auto) (int)
+parm:           reset:Attempt GPU resets (default: true) (bool)
+parm:           enable_hangcheck:Periodically check GPU activity for detecting hangs. WARNING: Disabling this can cause system wide hangs. (default: true) (bool)
+
+
+
+
+
+
+http://techpatterns.com/forums/about1963.html
+
+
+
+Powertop
+https://wiki.archlinux.org/index.php/Powertop
+
+
+http://askubuntu.com/questions/65198/do-i-need-to-add-a-boot-parameter-to-work-around-this-kernel-power-bug-on-a-sony
+
+
+https://lkml.org/lkml/2011/3/30/836
+
+
+http://souriguha.wordpress.com/2011/03/08/how-to-solve-problem-with-thinkpadkslowd-kworker-on-linux-kernel-2-35-2-36/
+
+
+=================================
+sudo sem password
+$visudo
+leonardo ALL=(ALL) NOPASSWD: ALL
+
+====================================================================
+
+Rodar aplicativos 32bits no LMDE 64bits
+
+$ sudo apt-get install libc6-i386
+$ sudo apt-get install ia32-libs
+
+Ao tentar rodar o aplicativo surgiu a seguinte mensagem:
+error while loading shared libraries: libgtk-x11-2.0.so.0: cannot open shared object file: No such file or directory
+
+O problema é a falta do GTK+ 2.0 32bits que você instala com o seguinte comando:
+
+$ sudo apt-get install ia32-libs-gtk
+
+Após a instalação do GTK você deve rodar o seguinte comando:
+export GTK_PATH=/usr/lib32/gtk-2.0
+assim o programa vai buscar a versão 32bits do gtk. O ideal é colocar esse comando em um script e executar sempre o script para chamar o programa:
+
+#!/bin/sh
+export GTK_PATH=/usr/lib32/gtk-2.0
+programa
+
+
+
+
+
+Nova tentativa de rodar o software e mais um erro:
+/usr/lib/gtk-2.0/2.10.0/engines/libmurrine.so: wrong ELF class: ELFCLASS64
+
+Esse problema é pela falta do libmurrine.so no diretório /usr/lib32/gtk-2.0/2.10.0/engines
+
+Fiz o download da libmurrine 0.98.1.1-5 neste link http://packages.debian.org/wheezy/i386/gtk2-engines-murrine/download mas apresentou a seguinte mensagem de erro ao tentar rodar o software:
+
+Gtk-WARNING **: GModule (/usr/lib32/gtk-2.0/2.10.0/engines/libmurrine.so) initialization check failed: Gtk+ version too old (micro mismatch)
+
+Desta vez a mensagem foi clara, a versão do GTK é muito antiga para a libmurrine então eu procurei por uma versão mais antiga e a versão 0.60-1.7 desse link funcionou:
+
+ftp://ftp.pbone.net/mirror/ftp5.gwdg.de/pub/opensuse/repositories/X11:/xfce/openSUSE_10.3/x86_64/gtk2-engine-murrine-32bit-0.60-1.7.x86_64.rpm
+
+
+baixei o arquivo e abri com o file roller, extrai manualmente e coloquei no diretório /usr/lib32/gtk-2.0/2.10.0/engines.
+
+
+
+pronto!
+
+
+
+
+
+
+====================================================================
+
+
+Bug Remmina Fullscreen
+
+
+It appears that this bug manifests if the connection was not in fullscreen mode when it was last closed, which may explain why some connections appear to be bad while others appear to be fine.
+
+Workaround to get full screen mode working consistently:
+1. Ensure "Remember last view mode for each connection" is enabled in Preferences
+2. Connect to remote host (in my case, RDP connection to Windows XP)
+3. Enter full screen mode (bug manifests as described earlier in thread)
+4. Disconnect from server using the toolbar button or Control_R+F4
+5. Connect to remote host again; this time the connection will enter full screen mode correctly.
+
+Ubuntu 12.04
+Remmina 0.9.99.1
+
+
+
+
+
+
+http://www.bluetile.org/#about
+
+
+
+===================================================================
+
+Idendificar todos os hardwares pci
+$ lspci
+
+
+Identificar a placa de rede
+$ lspci | grep -i eth
+
+
+http://en.gentoo-wiki.com/wiki/Realtek_RTL8101E
+
+https://www.google.com/search?q=apt-get+purge+vs+remove
+
+
+comandos inuteis do linux - control+L - clear
+
+http://forum.linuxmint.com/viewtopic.php?f=208&t=100842&p=573516
+
+
+problema com ethernet se resolveu colocando primeiro em um hub 10/100
+
+
+
+usar esse carregamento para imagens: http://auroraos.org/release/gnome
+
+animação cabecalho: http://googleblog.blogspot.com.br/2011/10/fall-sweep.html
+
+
+http://laspas.gr/2010/12/29/fine-tuning-lmde-201012-64bit/
+
+
+
+
+
+
+http://askubuntu.com/questions/105650/how-do-i-create-system-settings-entries
+
+
+
+
+
+
+
+
+=================================================
+Foi instalado o git
+
+$ sudo apt-get install git-core git-gui git-doc
+
+e o meld
+
+$ sudo apt-get install meld
+
+
+====================================================
+Instalado gnome-tweak-tool
+apt-get install gnome-tweak-tool
+
+
+
+
+=====================================================
+
+
+Instalado deluge torrent client
+
+apt-get install deluge
+
+
+
+=====================================================
+
+gnome-control-center
+deb http://www.tolaris.com/apt/ precise main
+deb-src http://www.tolaris.com/apt/ precise main
+
+
+wget -q http://www.tolaris.com/apt/tolaris-keyring.gpg -O- | sudo apt-key add -
+
+
+gpg --keyserver pgpkeys.mit.edu --recv-key  010908312D230C5F     
+gpg -a --export 010908312D230C5F | sudo apt-key add -
+
+
+
+
+http://warezrush.org/downloads/mac-other-oses/

@@ -1,0 +1,228 @@
+
+
+==========================================================================================
+
+Arquivos desktop: colocando seu aplicativo nos menus do GNOME
+
+O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon você está usando Gnome. 
+
+Caso você instale um programa e o mesmo não apareça nos menus do Gnome você pode criar um arquivo .desktop fazendo com que o sistema o reconheça automaticamente.
+
+A forma mais simples de criar um arquivo desktop é copiando de outro arquivo e alterando o que interessa mas se você quiser conhecer mais algumas informações sobre o arquivo e parâmetros possíveis eu recomendo estes links:
+
+
+http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR
+
+http://standards.freedesktop.org/menu-spec/latest/apa.html
+
+http://www.nautilus-actions.org/?q=node/377
+
+
+Para essa demonstração vou criar arquivos .desktop para dois programas: o Sublime Text 2, um ótimo editor de texto para programação e o users-admin, gui do gnome para administração de usuários e grupos.
+
+O Sublime Text 2 descompactei no diretório /opt e coloquei no path conforme este artigo. Já o users-admin tem informações da sua instalação aqui.
+
+O Sublime Text 2 quero adicionar ao menu "Programming" e o users-admin vou adicionar ao "System Settings".
+
+Sublime Text 2:
+
+Como eu quero colocar o sublime no menu programming vou aproveitar o arquivo .desktop do meld para criar o do sublime.
+
+$ sudo cp /usr/share/applications/meld.desktop /usr/share/applications/sublime_text.desktop
+$ sudo pluma /usr/share/applications/sublime_text.desktop
+
+
+O arquivo original estava assim:
+
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Meld
+Name[bg]=Meld
+Name[ca]=Meld
+Name[cs]=Meld
+Name[de]=Meld
+Name[dz]=མེལཌི་
+Name[el]=Meld
+Name[en_CA]=Meld
+Name[en_GB]=Meld
+Name[es]=Meld
+Name[fi]=Meld
+Name[fr]=Meld
+Name[gl]=Meld
+Name[hu]=Meld
+Name[it]=Meld
+Name[ja]=Meld
+Name[ko]=Meld
+Name[ne]=मेल्ड
+Name[nl]=Meld
+Name[pa]=Meld
+Name[pt]=Meld
+Name[pt_BR]=Meld
+Name[ru]=Meld
+Name[sl]=Meld
+Name[sq]=Meld
+Name[sr]=Мелд
+Name[sr@latin]=Meld
+Name[sv]=Meld
+Name[vi]=Meld
+Name[zh_CN]=Meld
+Name[zh_TW]=Meld
+GenericName=Diff Viewer
+GenericName[cs]=Prohlížeč rozdílů
+GenericName[de]=Diff-Betrachter
+GenericName[es]=Visor de Diff
+GenericName[fr]=Visionneur de différences
+GenericName[gl]=Visualizador Diff
+GenericName[hu]=Eltérésmegjelenítő
+GenericName[it]=Visualizzatore di differenze
+GenericName[ja]=差分ビューア
+GenericName[sl]=Pregledovalnik sprememb
+GenericName[zh_CN]=差异查看器
+X-GNOME-FullName=Meld Diff Viewer
+X-GNOME-FullName[bg]=Програма за сравняване Meld
+X-GNOME-FullName[ca]=Visualitzador de diferències Meld
+X-GNOME-FullName[cs]=Prohlížeč rozdílů Meld
+X-GNOME-FullName[de]=Meld Diff-Betrachter
+X-GNOME-FullName[dz]=མེལཌི་མ་འདྲཝ་སྟོན་མི་
+X-GNOME-FullName[el]=Προβολή διαφορών Meld
+X-GNOME-FullName[en_CA]=Meld Diff Viewer
+X-GNOME-FullName[en_GB]=Meld Diff Viewer
+X-GNOME-FullName[es]=Visor de Diff Meld
+X-GNOME-FullName[fi]=Meld - erojen vertailija
+X-GNOME-FullName[fr]=Meld visionneur de différences
+X-GNOME-FullName[gl]=Visualizador Diff Meld
+X-GNOME-FullName[hu]=Meld eltérésmegjelenítő
+X-GNOME-FullName[it]=Visualizzatore di differenze Meld
+X-GNOME-FullName[ja]=Meld 差分ビューア
+X-GNOME-FullName[ko]=Meld 차이 보기
+X-GNOME-FullName[ne]=मेल्ड फरक दर्शक
+X-GNOME-FullName[nl]=Meld diff-weergave
+X-GNOME-FullName[pt]=Visualizador de Diferenças Meld
+X-GNOME-FullName[pt_BR]=Visualizador de diff Meld
+X-GNOME-FullName[ru]=Meld - Просмотр различий
+X-GNOME-FullName[sl]=Meld pregledovalnik različic
+X-GNOME-FullName[sq]=Parësi i Dallimesh Meld
+X-GNOME-FullName[sr]=Прегледач разлика Мелд
+X-GNOME-FullName[sr@latin]=Pregledač razlika Meld
+X-GNOME-FullName[sv]=Diffvisaren Meld
+X-GNOME-FullName[vi]=Bộ xem khác biệt Meld
+X-GNOME-FullName[zh_CN]=Meld Diff 差异查看器
+X-GNOME-FullName[zh_TW]=Meld Diff 顯示程式
+Comment=Compare and merge your files
+Comment[ca]=Compareu i fusioneu fitxers.
+Comment[cs]=Porovnává a slučuje soubory
+Comment[de]=Vergleichen und Zusammenführen von Dateien
+Comment[es]=Compare y combine sus archivos
+Comment[fr]=Comparer et fusionner des fichiers
+Comment[gl]=Compare e combine os seus ficheiros
+Comment[hu]=Fájlok összehasonlítása és összefésülése
+Comment[it]=Confronta e unisce i propri file
+Comment[ja]=複数のファイルを比較したりマージします
+Comment[pt_BR]=Compare e mescle seus arquivos
+Comment[sl]=Primerjava in združevanje datotek
+Comment[sv]=Jämför och slå samman dina filer
+Comment[zh_CN]=比较和合并您的文件
+Exec=meld
+Terminal=false
+Type=Application
+Icon=meld
+StartupNotify=true
+Categories=GNOME;Application;Development;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=meld
+X-GNOME-Bugzilla-Component=general
+
+
+
+
+
+
+
+ficou assim:
+
+
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Sublime Text 2
+GenericName=Sublime Text 2
+X-GNOME-FullName=Sublime Text 2
+Comment=Text editor for developers
+Exec=sublime_text
+Terminal=false
+Type=Application
+Icon=/opt/sublime_text_2/Icon/256x256/sublime_text.png
+StartupNotify=true
+Categories=GNOME;Application;Development;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=Sublime Text 2
+X-GNOME-Bugzilla-Component=general
+
+
+
+
+
+
+Users admin:
+
+$ sudo cp /usr/share/applications/gnome-display-panel.desktop /usr/share/applications/users-admin.desktop
+$ sudo pluma /usr/share/applications/users-admin.desktop
+
+
+
+
+http://askubuntu.com/questions/105650/how-do-i-create-system-settings-entries
+
+
+
+
+
+===========================================================================================
+
+Apagar arquivos com a tecla delete
+
+http://alllinuxstuff.blogspot.de/2011/08/restore-delete-key-for-moving-files-to.html
+
+===========================================================================================
+
+
+Gerenciador de Usuário e Grupos do Gnome no Linux Mint Debian
+
+Bom, eu sou fâ da praticidade e ao contrário de muitos não tenho interesse em decorar comandos de shell para executar tarefas básicas. Por isso que tal instalar o gerenciador de grupos do gnome no Linux Mint Debian já que o mesmo não tem nenhuma interface gráfica para este fim? Para isso vamos instalar o pacote gnome-system-tools. Neste pacote estão inclusas outras ferramentas conforme descrito no site do projeto (http://projects.gnome.org/gst/).
+
+Para instalar digite os comandos abaixo:
+
+$ sudo apt-get update
+$ sudo apt-get install gnome-system-tools
+
+Pronto, agora é só rodar:
+
+$ users-admin
+
+Obs: A primeira vez que você alterar algum grupo do seu usuário, certifique-se que você está no grupo sudo pois a primeira vez que usei o users-admin no Linux Mint Debian ele me tirou do grupo sudo. Caso isso já tenha acontecido você pode corrigir com este comando (pode ser necessário entrar em modo recovery como root):
+
+$ sudo usermod -G sudo nome_do_usuario
+
+O interessante é criar um atalho para ele no painel "System Settings" e para isso você pode seguir este tutorial.
+
+=============================================================================================
+entre com alt + F2 e digite "virtualbox" para abrir o programa.
+
+Já no VirtualBox clique em New para criar uma nova VM (virtual machine) e clique em next.
+Na tela de VM Name and OS Type em name digite Windows 7, em Operating System escolha Microsoft Windows e version Windows 7. Eu uso a versão 64 bits pois tenho 8 giga de ram no notebook e a versão de 32 bits só reconhece até 3 giga. Talvez não apareça a opção 64 bits para você e isso pode ser o seu processador que não dá suporte ou falta alguma configuração na BIOS para permitir virtualização. Em seguida clique em Next.
+Agora você precisa escolher a quantidade de memória para a máquina virtual e isso depende muito da quantidade de memória física que você possui. Minha dica é que realmente você terá problemas se passar da área verde, ou seja, da quantidade máxima recomendada. Eu fiz o teste e quando você abre a VM o HD trabalha loucamente e você fica com o sistema inutilizado. Uma hora até abre mas não vale a pena esperar. No caso aqui selecionei 4 giga ou 4 x 1.024 = 4096 (você pode mudar estas configurações depois para fazer um ajuste fino).
+
+Na tela "Virtual Hard Disk" deixe como está e clique em next.
+
+Na tela "Welcome to the virtual disk creation wizard" você pode escolher qual o formato do arquivo de imagem de disco que usará na sua VM. Isso serve para manter compatibilidade entre outros sistemas de Maquina Virtual como o VMWare. Deixe o padrão e clique em next.
+
+Na tela "Virtual disk storage details" você escolhe se o disco virtual terá tamanho dinâmico ou fixo. No caso de tamanho fixo você determina um tamanho para o HD da maquina virtual e o arquivo será criado automaticamente ocupando o espaço na sua máquina hospedeira. Tamanhos físicos, apesar de demorar mais para criar tem desempenho melhor mas ocupam o espaço físico do seu HD mesmo não tendo informação nenhuma gravada na VM. Já arquivos dinâmicos vão aumentando a medida que você ocupa o espaço do HD na VM e o VirtualBox mente para a VM dizendo que o HD tem X de espaço livre conforme mostrado na imagem abaixo:
+
+Nesta tela também é possível mudar o local onde o arquivo será gravado. O padrão é ~/VirtualBox VMs/. Para quem não sabe o ~ no Linux representa o diretório home do usuário.
+
+Por último clique em Create.
+
+Pronto, a sua VM foi criada. Agora será preciso fazer alguns ajustes nela para começar a instalação do Windows 7. Selecione a VM e clique em settings (engrenagem amarela). Vai aparecer uma mensagem alertando que não é possível acessar os dispositivos USB do seu computador e para isso você deve adicionar o seu usuário ao grupo "vboxusers". Para isso você pode instalar o gerenciador de grupos do gnome seguindo este tutorial ou digitar a seguinte linha de comando (troque nome_do_usuario pelo seu nome de usuario):
+
+$ sudo usermod -G vboxusers nome_do_usuario
